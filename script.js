@@ -82,3 +82,140 @@ let obj = {
 
 // greet(print)
 
+
+// function print(name){    //callback fn
+//     console.log("hello students" , name)
+
+// }
+
+// function greet(num){
+//     console.log("welcome")
+//     setTimeout(() => {
+//         console.log("inside first timeout")
+//         let firstname = "alex"
+//         num(firstname)
+//     },2000);
+
+// }
+
+// greet(print)
+
+
+
+
+
+
+// console.log("starting homework");
+// setTimeout(() => {
+//     console.log("homework done");
+//     console.log("starting dinner");
+
+//     setTimeout(() => {
+//         console.log("dnner done");
+//         console.log("getting ready to go out ");
+
+//         setTimeout(() => {
+//             console.log("going to the playground");
+
+//         }, 1000);   // after dinner done
+//     }, 1500);      // dinner time
+// }, 2000);         // homework time
+
+
+
+
+
+
+
+
+// function finishhomework(callback){
+//     console.log("starting homework ");
+//     setTimeout(() => {
+//         console.log("homework done");
+//         callback();
+//     }, 2000);
+// }
+
+// function eatdinner(callback){
+//     console.log("starting dinner");
+//     setTimeout(() => {
+//         console.log("dinner done");
+//         callback();
+//     }, 1500);
+// }
+
+
+// function gotoplayground(){
+//     console.log("going to playground");
+
+// }
+
+// finishhomework(() =>{
+//     eatdinner(()=> {
+//         gotoplayground();
+//     }
+//     );
+// }
+// );
+
+
+
+
+// const input=document.querySelector('#task')
+// const btn=document.querySelector(".btn")
+// const lists=document.querySelector(".list")
+
+// btn.addEventListener('click', (e) =>{
+//     e.preventDefault()
+//     const li=document.createElement('li')
+//     li.innerText=input.value
+//     lists.appendChild(li)
+//     input.value=""
+// })
+
+
+// btn.addEventListener('click', (e)=>{
+//     e.preventDefault()
+//     if(input.value===""){
+//         alert('enter task')
+//         return
+//     }
+//     const li=document.createElement('li')
+//     const deleteButton=document.createElement('button')
+
+//     deleteButton.innerText="delete"
+//     li.innerText=input.value
+
+//     li.appendChild(deleteButton)
+//     lists.appendChild(li)
+
+//     deleteButton.addEventListener('click', () =>{
+//         lists.removeChild(li)
+//     })
+//     input.value=""
+// })
+
+
+
+
+const p = new Promise(function(resolve,reject){
+    setTimeout(() => {
+        let done =true;
+        if(done){
+            resolve({name:"alex",age:34})
+        }else{
+            reject("network issue")
+        }
+    }, 5000)
+});
+
+//console.log(p)
+
+p.then ((data) =>{
+    console.log("resolved",data)
+}).catch((err)=>{
+    console.log("rejected",err)
+}).finally(()=>{
+    console.log("finally block")
+})
+
