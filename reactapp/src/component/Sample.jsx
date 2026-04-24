@@ -1,5 +1,5 @@
 
-import React,{Component, useState} from 'react'
+import React,{Component, use, useState} from 'react'
 import style from '../css/Sample.module.css'
 import style1 from '../css/HomePage.module.css'
 // import styled from 'styled-components'
@@ -10,7 +10,17 @@ function Sample(props) {
     const [name,setName]=useState("Devendra")
     const [age,setAge]=useState(20)
 
-    
+  function sample(props)  {
+    const [name,setName]=useState("Devendra")
+    const [age,setAge]=useState(20)
+
+    useEffect(()=>{
+        console.log("Component Did Mount")
+        return()=>{
+            console.log("Component Will Unmount")
+        }
+    }
+  },[name])
 
   return (
     <div>
@@ -53,7 +63,7 @@ const Button=styled.button`
     border-radius: 10px;
     border:none
 `
-
+                                                                                                                        
 // class Sample extends Component {
 //     constructor(props){
 //         super(props)
